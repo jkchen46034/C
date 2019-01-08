@@ -4,9 +4,9 @@
 #include <iostream>
 
 typedef struct Node_T {
-	Node_T *left;
+	Node_T* left;
 	int val;
-	Node_T *right;
+	Node_T* right;
 } Node;
 
 void bfs(Node* node) {
@@ -77,6 +77,7 @@ Node* insert(Node* node, int val) {
 		node->left = insert(node->left, val);
 	else 
 		node->right = insert(node->right, val);
+	return node;
 }
 
 Node* buildBST(int* a, int n) {
@@ -87,14 +88,33 @@ Node* buildBST(int* a, int n) {
 	return node;
 }
 
+void visit(Node* );
+
+Node* freeTree(Node* node) {
+	if (node==0) {
+		return 0;
+	}
+	node->left = freeTree(node->left);
+	node->right = freeTree(node->right);
+	visit(node);
+	return 0;
+}
+
+void visit(Node* node) {
+	std::cout << "node freed" << std::endl;
+	free(node);
+}
+
 int main() {
 	int a[] = {7,4,6,8,5,3,2,1,0};
 	int n = sizeof(a)/sizeof(int);
 	Node* node = buildBST(a, n);
-	std::cout << "bfs of a bst: ";  bfs(node); std::cout << std::endl; // 748362510
+	std::cout << "bfs: ";  bfs(node); std::cout << std::endl; // 748362510
 	std::cout << "infix: ";  infix(node); std::cout << std::endl;  // 012345678 
 	std::cout << "prefix: "; prefix(node); std::cout << std::endl; // 743210658
 	std::cout << "postfix: "; postfix(node); std::cout << std::endl; // 012356487
 	std::cout << "height: "<< height(node) << std::endl;  // 6
+	node = freeTree(node);
+	std::cout << "bfs: ";  bfs(node); std::cout << std::endl; // 748362510
 	return 1;
 }
