@@ -90,17 +90,17 @@ Node* buildBST(int* a, int n) {
 
 void visit(Node**);
 
-Node* freeTree(Node** node) {
+void freeTree(Node** node) {
 	if (*node==0) {
-		return 0 ;
+		return ;
 	}
-	(*node)->left = freeTree(&((*node)->left));
-	(*node)->right = freeTree(&((*node)->right));
+	freeTree(&((*node)->left));
+	freeTree(&((*node)->right));
 	visit(node);
 }
 
 void visit(Node** node) {
-	std::cout << "node freed" << std::endl;
+	std::cout << "node " << (*node)->val << " freed" << std::endl;
 	free(*node);
 	*node = 0;
 }
@@ -115,6 +115,23 @@ int main() {
 	std::cout << "postfix: "; postfix(node); std::cout << std::endl; // 012356487
 	std::cout << "height: "<< height(node) << std::endl;  // 6
 	freeTree(&node);
-	std::cout << "bfs: ";  bfs(node); std::cout << std::endl; // 748362510
+	std::cout << "bfs: ";  bfs(node); std::cout << std::endl; // empty
 	return 1;
 }
+/*
+bfs: 748362510
+infix: 012345678
+prefix: 743210658
+postfix: 012356487
+height: 6
+node 0 freed
+node 1 freed
+node 2 freed
+node 3 freed
+node 5 freed
+node 6 freed
+node 4 freed
+node 8 freed
+node 7 freed
+bfs: 
+*/
