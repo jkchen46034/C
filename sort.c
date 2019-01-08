@@ -40,7 +40,7 @@ void mergesort(int*a, int l, int r) {
 	int middle = (l+r)/2;
 	mergesort(a, l, middle);
 	mergesort(a, middle, r);
-  merge(a, l, middle, r);
+  	merge(a, l, middle, r);
 }
 
 void merge(int *a, int l,  int m, int r) {
@@ -114,15 +114,14 @@ int main() {
 	int c[]={5, 1, 4, 8, 2};
 	n = sizeof(c)/sizeof(int);
 	std::cout << "selection sort:\n"; print(c, n); selectionsort(c, n); 
-	int d[]={15,13,1,7,5,9,6,4};
+	int d[]={5,1,4,8,2};
 	n = sizeof(d)/sizeof(int);
 	::n = n;
 	std::cout << "merge sort:\n"; print(d, n); mergesort(d, 0, n); 
-	int e[]={15,13,1,7,5,9,6,4};
+	int e[]={5,1,4,8,2};
 	n = sizeof(e)/sizeof(int);
 	::n = n;
 	std::cout << "quick sort:\n"; print(e, n); quicksort(e, 0, n); 
-	
 	return 1;
 }
 /*
@@ -150,37 +149,16 @@ selection sort:
 1 2 4 8 5 
 1 2 4 5 8 
 merge sort:
-15 13 1 7 5 9 6 4 
-13 15 1 7 5 9 6 4 
-13 1 15 7 5 9 6 4 
-1 13 15 7 5 9 6 4 
-1 13 7 15 5 9 6 4 
-1 7 13 15 5 9 6 4 
-1 7 13 15 5 9 4 6 
-1 7 13 15 5 4 9 6 
-1 7 13 15 4 5 9 6 
-1 7 13 15 4 5 6 9 
-1 7 13 4 15 5 6 9 
-1 7 4 13 15 5 6 9 
-1 4 7 13 15 5 6 9 
-1 4 7 13 5 15 6 9 
-1 4 7 5 13 15 6 9 
-1 4 5 7 13 15 6 9 
-1 4 5 7 13 6 15 9 
-1 4 5 7 6 13 15 9 
-1 4 5 6 7 13 15 9 
-1 4 5 6 7 13 9 15 
-1 4 5 6 7 9 13 15 
+5 1 4 8 2 
+1 5 4 8 2 
+1 5 4 2 8 
+1 5 2 4 8 
+1 2 5 4 8 
+1 2 4 5 8 
 quick sort:
-15 13 1 7 5 9 6 4 
-1 13 15 7 5 9 6 4 
-1 4 15 7 5 9 6 13 
-1 4 7 15 5 9 6 13 
-1 4 7 5 15 9 6 13 
-1 4 7 5 9 15 6 13 
-1 4 7 5 9 6 15 13 
-1 4 7 5 9 6 13 15 
-1 4 5 7 9 6 13 15 
-1 4 5 6 9 7 13 15 
-1 4 5 6 7 9 13 15 
+5 1 4 8 2 
+1 5 4 8 2 
+1 2 4 8 5 
+1 2 4 8 5 
+1 2 4 5 8
 */
