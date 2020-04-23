@@ -1,0 +1,5 @@
+minimum d: 0 to node: 0 via edge (0, 0)
+minimum d: 10 to node: 1 via edge (0, 1)
+minimum d: 30 to node: 3 via edge (0, 3)
+minimum d: 50 to node: 2 via edge (3, 2)
+minimum d: 60 to node: 4 via edge (2, 4)
