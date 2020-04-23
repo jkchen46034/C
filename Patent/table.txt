@@ -1,0 +1,15 @@
+PAT-17: ACR Fingerprint Local Match 
+PAT-19: A Data Structure and Algorithm to Detect Channel Change Quicker
+PAT-37: A Video Fingerprint Algorithm Based on Fourier Transform of Histogram
+PAT-38: A Temporal Ordinal Video Fingerprinting Algorithm
+PAT-40: A Video Fingerprint Search Algorithm Based on Hashmap and Fingerprint Blocks
+PAT-41: Layouts of Dividing Frame to Perform Ordinal Fingeprinting 
+PAT-60: Cold Match using Binary Search at Client
+PAT-65: Reliably Flag Ad Frames During Matching While Indexing.
+PAT-72: Video Fingerprint Search Able to Support Low Capture Rates
+PAT-143: Achieving frame accuracy in both cold matching and hot matching
+PAT-144: Reducing False Positive By Incorporating Audio
+PAT-145: Using ordinal of median values as video fingerprints
+PAT-148: Matching While Indexing with near optimal performance regarding low latency 
+PAT-149: Fast computing of cross correlation of two blocks
+PAT-150: Detecting Scene Changes 
